@@ -1,6 +1,6 @@
-pragma solidity ^0.5.2;
+pragma solidity >=0.4.21 <0.6.0;
 
 contract EthSwap {
-  string name = "EthSwap"
-  
+  string name = "EthSwap";
+
 }
