@@ -15,6 +15,9 @@ contract DappToken {
   );
 
   mapping(address => uint256) public balanceOf;
+  // Nested mapping to map spending allowance 
+    // ❓❓❓mapping(at msg.sender address => mapping(at spender address store a value of allowance)) that stores the amount allowed to spend
+  mapping(address => mapping(address => uint256)) public allowance;
 
   constructor() public {
     balanceOf[msg.sender] = totalSupply;
@@ -33,8 +36,10 @@ contract DappToken {
     return true;
   }
 
-  function approve() {
-
+  function approve(address _spender, uint256 _value) public returns (bool success) {
+    allowance[msg.sender][_spender] = _value;
+    emit Approval(msg.sender, _spender, _value);
+    return true;
   }
 
 
