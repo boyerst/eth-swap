@@ -23,7 +23,11 @@ contract DappToken {
     // ❓❓❓mapping(at msg.sender address => mapping(at spender address store a value of allowance)) that stores the amount allowed to spend
   mapping(address => mapping(address => uint256)) public allowance;
 
+// Run whenever contract deployed
   constructor() public {
+    // Total supply is assigned to the deployer
+    // In this case it will be assigned to the first account in ganache
+    // BUT we don't want the user to have them - we want the EthSwap contract to have them
     balanceOf[msg.sender] = totalSupply;
   }
 
