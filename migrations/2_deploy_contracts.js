@@ -13,7 +13,7 @@ module.exports = async function(deployer) {
   const ethSwap = await EthSwap.deployed()
 
   // Transfer all tokens to EthSwap contract using the transfer function in Token contract
-  // await token.transfer(ethSwap.address, '1000000000000000000000000')
+  await token.transfer(ethSwap.address, '1000000000000000000000000')
 };
 
 
