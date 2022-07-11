@@ -16,6 +16,7 @@ contract('EthSwap', (accounts) => {
 
   let token, ethSwap
 
+  // Add before all hook to keep it DRY
   before(async () => {
     token = await Token.new()    
     ethSwap = await EthSwap.new()
