@@ -8,7 +8,7 @@ module.exports = async function(deployer) {
   // Fetch the Token contract
   const token = await Token.deployed()
 
-  await deployer.deploy(EthSwap);
+  await deployer.deploy(EthSwap, token.address);
   // Fetch EthSwap contract
   const ethSwap = await EthSwap.deployed()
 

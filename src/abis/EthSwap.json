@@ -2,6 +2,18 @@
   "contractName": "EthSwap",
   "abi": [
     {
+      "inputs": [
+        {
+          "internalType": "contract Token",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "constant": true,
       "inputs": [],
       "name": "name",
@@ -15,23 +27,38 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract Token",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/EthSwap.sol\":\"EthSwap\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/EthSwap.sol\":{\"keccak256\":\"0x03f165c195aeb6bb9a54443ca07ef924246caf648dc78843814a036dfad20709\",\"urls\":[\"bzz-raw://b9b0cb54b351cb63c01cea6aeb093f5fa8c7014616ceb459b200fcca648dbbfd\",\"dweb:/ipfs/QmYywnYYguHF7JjxsgRXZiKzPQ88oRrwcz1hi23RarQQtA\"]}},\"version\":1}",
-  "bytecode": "0x60806040526040518060400160405280600781526020017f45746853776170000000000000000000000000000000000000000000000000008152506000908051906020019061004f929190610062565b5034801561005c57600080fd5b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b610186806101166000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806306fdde0314610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101495780601f1061011e57610100808354040283529160200191610149565b820191906000526020600020905b81548152906001019060200180831161012c57829003601f168201915b50505050508156fea265627a7a723158206cb0218820c64e69c6a28fbb921fee6d24d5c0155c2e0fd79fc022f79e3a03f964736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806306fdde0314610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101495780601f1061011e57610100808354040283529160200191610149565b820191906000526020600020905b81548152906001019060200180831161012c57829003601f168201915b50505050508156fea265627a7a723158206cb0218820c64e69c6a28fbb921fee6d24d5c0155c2e0fd79fc022f79e3a03f964736f6c63430005100032",
-  "sourceMap": "34:55:0:-;;;55:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;34:55;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:55:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "34:55:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:55:0;;;;;;;;;;;;;;;;;;;55:30;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;55:30:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity >=0.4.21 <0.6.0;\n\ncontract EthSwap {\n  string public name = \"EthSwap\";\n\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Token\",\"name\":\"_token\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract Token\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/EthSwap.sol\":\"EthSwap\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/EthSwap.sol\":{\"keccak256\":\"0x070188f746e5f738805b398db0ca8d62c8fc36e16f9c0fa3cf02ea4b0f744a72\",\"urls\":[\"bzz-raw://91f9757ca9f8dab322c0cf016069fb96b24293398c8a2d75726627409ced78b7\",\"dweb:/ipfs/QmRukrdmdQqm1um9xtXoNAgsqRTELG2AZ99wX42BkCspSf\"]},\"project:/src/contracts/Token.sol\":{\"keccak256\":\"0xdce7d0f34b6d9d65be6d3a51d80a370bf801447c0f151b709498f28c2df39b2a\",\"urls\":[\"bzz-raw://65f86e7756cf3191d45ac8b365dd46757cd9dfd9ec94067b5f638fae55ed7b79\",\"dweb:/ipfs/QmVvhbCmf45StThjCa1UAxZw9H6JMEfyMZrDFtTb2yc9MY\"]}},\"version\":1}",
+  "bytecode": "0x60806040526040518060400160405280600781526020017f45746853776170000000000000000000000000000000000000000000000000008152506000908051906020019061004f9291906100d7565b5034801561005c57600080fd5b5060405161038c38038061038c8339818101604052602081101561007f57600080fd5b810190808051906020019092919050505080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505061017c565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061011857805160ff1916838001178555610146565b82800160010185558215610146579182015b8281111561014557825182559160200191906001019061012a565b5b5090506101539190610157565b5090565b61017991905b8082111561017557600081600090555060010161015d565b5090565b90565b6102018061018b6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806306fdde031461003b578063fc0c546a146100be575b600080fd5b610043610108565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100c66101a6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561019e5780601f106101735761010080835404028352916020019161019e565b820191906000526020600020905b81548152906001019060200180831161018157829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158200142459c3bf1187eb97ebcb4420c9769320c156de6565747b12480a5866f1e1f64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806306fdde031461003b578063fc0c546a146100be575b600080fd5b610043610108565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100c66101a6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561019e5780601f106101735761010080835404028352916020019161019e565b820191906000526020600020905b81548152906001019060200180831161018157829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158200142459c3bf1187eb97ebcb4420c9769320c156de6565747b12480a5866f1e1f64736f6c63430005100032",
+  "sourceMap": "57:1458:0:-;;;175:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;738:773;8:9:-1;5:2;;;30:1;27;20:12;5:2;738:773:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;738:773:0;;;;;;;;;;;;;;;;1500:6;1492:5;;:14;;;;;;;;;;;;;;;;;;738:773;57:1458;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "57:1458:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;57:1458:0;;;;;;;;;;;;;;;;;;;;;;;;175:30;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;175:30:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;525:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;175:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;525:18::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.6.0;\n\nimport \"./Token.sol\";\n\ncontract EthSwap {\n  // This is a 'state' var because the data within this var is actually stored on the blockchain\n  string public name = \"EthSwap\";\n  // Create a variable that represents a Token contract\n    // We will be able to call the token methods on this variable\n      // For example when we swap tokens within the app via the EthSwap contract interface, we can call the transfer() function that is located in the Token interface FROM the EthSwap interface\n  Token public token;\n\n  // We have to tell EthSwap where the token contract is on the blockchain so we pass in the contract to interact with the address\n    // We pass it in as a Contract Type \"MyContract _name\"\n  constructor(Token _token) public {\n    // In the same way that the contract name is declared as a state var and this stored on the blockchain and easily accessed - we want to do the same with the token contract here\n    // However, the _token var is just a function argument that we passed in as a local var - making it unaccessible outside of the function scope and NOT stored on the blockchain\n    // In order to have it stored on the blockchain we must store it as a state variable\n        // 1. First by creating the var above the constructor\n        // 2. Then assigning the function argument to it\n        // 3. Then because we added an arg to the constructor we have to update migrations and add the Token contract address to ethSwap deployer\n    token = _token;\n  }\n\n\n}",
   "sourcePath": "/Users/steveboyer/Code/Apps/Tutorials/eth-swap/src/contracts/EthSwap.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/EthSwap.sol",
     "exportedSymbols": {
       "EthSwap": [
-        5
+        18
       ]
     },
-    "id": 6,
+    "id": 19,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -49,25 +76,36 @@
         "src": "0:32:0"
       },
       {
+        "absolutePath": "project:/src/contracts/Token.sol",
+        "file": "./Token.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 19,
+        "sourceUnit": 197,
+        "src": "34:21:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 5,
+        "id": 18,
         "linearizedBaseContracts": [
-          5
+          18
         ],
         "name": "EthSwap",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 4,
+            "id": 5,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 5,
-            "src": "55:30:0",
+            "scope": 18,
+            "src": "175:30:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -75,10 +113,10 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 2,
+              "id": 3,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "55:6:0",
+              "src": "175:6:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -87,14 +125,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "45746853776170",
-              "id": 3,
+              "id": 4,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "76:9:0",
+              "src": "196:9:0",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_51a8bd802f59014e839d6a0409f209f22b63f65f9320c5260ab834272c45eba6",
@@ -103,20 +141,156 @@
               "value": "EthSwap"
             },
             "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "token",
+            "nodeType": "VariableDeclaration",
+            "scope": 18,
+            "src": "525:18:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Token_$196",
+              "typeString": "contract Token"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 6,
+              "name": "Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 196,
+              "src": "525:5:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Token_$196",
+                "typeString": "contract Token"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 16,
+              "nodeType": "Block",
+              "src": "771:740:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 12,
+                      "name": "token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "1492:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Token_$196",
+                        "typeString": "contract Token"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13,
+                      "name": "_token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9,
+                      "src": "1500:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Token_$196",
+                        "typeString": "contract Token"
+                      }
+                    },
+                    "src": "1492:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Token_$196",
+                      "typeString": "contract Token"
+                    }
+                  },
+                  "id": 15,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1492:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "750:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Token_$196",
+                    "typeString": "contract Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 8,
+                    "name": "Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 196,
+                    "src": "750:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Token_$196",
+                      "typeString": "contract Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "749:14:0"
+            },
+            "returnParameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "771:0:0"
+            },
+            "scope": 18,
+            "src": "738:773:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 6,
-        "src": "34:55:0"
+        "scope": 19,
+        "src": "57:1458:0"
       }
     ],
-    "src": "0:89:0"
+    "src": "0:1515:0"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/src/contracts/EthSwap.sol",
       "exportedSymbols": {
         "EthSwap": [
-          5
+          18
         ]
       }
     },
@@ -139,6 +313,21 @@
       },
       {
         "attributes": {
+          "SourceUnit": 197,
+          "absolutePath": "project:/src/contracts/Token.sol",
+          "file": "./Token.sol",
+          "scope": 19,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2,
+        "name": "ImportDirective",
+        "src": "34:21:0"
+      },
+      {
+        "attributes": {
           "baseContracts": [
             null
           ],
@@ -149,17 +338,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            5
+            18
           ],
           "name": "EthSwap",
-          "scope": 6
+          "scope": 19
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "name",
-              "scope": 5,
+              "scope": 18,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "string",
@@ -171,9 +360,9 @@
                   "name": "string",
                   "type": "string"
                 },
-                "id": 2,
+                "id": 3,
                 "name": "ElementaryTypeName",
-                "src": "55:6:0"
+                "src": "175:6:0"
               },
               {
                 "attributes": {
@@ -188,24 +377,177 @@
                   "type": "literal_string \"EthSwap\"",
                   "value": "EthSwap"
                 },
-                "id": 3,
+                "id": 4,
                 "name": "Literal",
-                "src": "76:9:0"
+                "src": "196:9:0"
               }
             ],
-            "id": 4,
+            "id": 5,
             "name": "VariableDeclaration",
-            "src": "55:30:0"
+            "src": "175:30:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "token",
+              "scope": 18,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract Token",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Token",
+                  "referencedDeclaration": 196,
+                  "type": "contract Token"
+                },
+                "id": 6,
+                "name": "UserDefinedTypeName",
+                "src": "525:5:0"
+              }
+            ],
+            "id": 7,
+            "name": "VariableDeclaration",
+            "src": "525:18:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 18,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_token",
+                      "scope": 17,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract Token",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Token",
+                          "referencedDeclaration": 196,
+                          "type": "contract Token"
+                        },
+                        "id": 8,
+                        "name": "UserDefinedTypeName",
+                        "src": "750:5:0"
+                      }
+                    ],
+                    "id": 9,
+                    "name": "VariableDeclaration",
+                    "src": "750:12:0"
+                  }
+                ],
+                "id": 10,
+                "name": "ParameterList",
+                "src": "749:14:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 11,
+                "name": "ParameterList",
+                "src": "771:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract Token"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "contract Token",
+                              "value": "token"
+                            },
+                            "id": 12,
+                            "name": "Identifier",
+                            "src": "1492:5:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 9,
+                              "type": "contract Token",
+                              "value": "_token"
+                            },
+                            "id": 13,
+                            "name": "Identifier",
+                            "src": "1500:6:0"
+                          }
+                        ],
+                        "id": 14,
+                        "name": "Assignment",
+                        "src": "1492:14:0"
+                      }
+                    ],
+                    "id": 15,
+                    "name": "ExpressionStatement",
+                    "src": "1492:14:0"
+                  }
+                ],
+                "id": 16,
+                "name": "Block",
+                "src": "771:740:0"
+              }
+            ],
+            "id": 17,
+            "name": "FunctionDefinition",
+            "src": "738:773:0"
           }
         ],
-        "id": 5,
+        "id": 18,
         "name": "ContractDefinition",
-        "src": "34:55:0"
+        "src": "57:1458:0"
       }
     ],
-    "id": 6,
+    "id": 19,
     "name": "SourceUnit",
-    "src": "0:89:0"
+    "src": "0:1515:0"
   },
   "compiler": {
     "name": "solc",
@@ -215,12 +557,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xd04B73D636601cd701Ad7aDA7692bBEF7D678364",
-      "transactionHash": "0xeb68f414ca5f595f0f62b3ba727cb30802b04e2840474ea2dbcc0b679d5cee18"
+      "address": "0x50eC4f105c1825451918171A5e1f9E4BC36CA57b",
+      "transactionHash": "0x8c5694598887137a632ba071d0e1e10601903b4697b5d2dee75b14cbb5c82a58"
     }
   },
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-07-09T21:59:53.796Z",
+  "updatedAt": "2022-07-11T16:06:41.481Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

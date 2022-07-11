@@ -3,6 +3,7 @@ pragma solidity >=0.4.21 <0.6.0;
 import "./Token.sol";
 
 contract EthSwap {
+  // This is a 'state' var because the data within this var is actually stored on the blockchain
   string public name = "EthSwap";
   // Create a variable that represents a Token contract
     // We will be able to call the token methods on this variable
@@ -12,7 +13,12 @@ contract EthSwap {
   // We have to tell EthSwap where the token contract is on the blockchain so we pass in the contract to interact with the address
     // We pass it in as a Contract Type "MyContract _name"
   constructor(Token _token) public {
-    // Underscore denotes a local variable _token but we declare it as token to help conflict from 'Token public token;' above
+    // In the same way that the contract name is declared as a state var and this stored on the blockchain and easily accessed - we want to do the same with the token contract here
+    // However, the _token var is just a function argument that we passed in as a local var - making it unaccessible outside of the function scope and NOT stored on the blockchain
+    // In order to have it stored on the blockchain we must store it as a state variable
+        // 1. First by creating the var above the constructor
+        // 2. Then assigning the function argument to it
+        // 3. Then because we added an arg to the constructor we have to update migrations and add the Token contract address to ethSwap deployer
     token = _token;
   }
 
