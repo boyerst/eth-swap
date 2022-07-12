@@ -19,7 +19,7 @@ contract('EthSwap', (accounts) => {
   // Add before all hook to keep it DRY
   before(async () => {
     token = await Token.new()    
-    ethSwap = await EthSwap.new()
+    ethSwap = await EthSwap.new(token.address)
     // We use the tokens() helper function above to covert this number to a more human readable format
       // From human readable format to machine (EVM) readable format
           // unsigned integer      ===> wei
