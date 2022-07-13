@@ -9,6 +9,7 @@ contract EthSwap {
     // We will be able to call the token methods on this variable
       // For example when we swap tokens within the app via the EthSwap contract interface, we can call the transfer() function that is located in the Token interface FROM the EthSwap interface
   Token public token;
+  uint public rate = 100;
 
   // We have to tell EthSwap where the token contract is on the blockchain so we pass in the contract to interact with the address
     // We pass it in as a Contract Type "MyContract _name"
@@ -21,6 +22,25 @@ contract EthSwap {
         // 3. Then because we added an arg to the constructor we have to update migrations and add the Token contract address to ethSwap deployer
     token = _token;
   }
+
+  function buytokens() public payable {
+    // Transfer tokens from EthSwap contract to the buyer by using transfer() function in Token contract
+    // Transfer() takes two _to and _value
+      // _to = msg.sender
+      // _value
+        // The buyer will be buying the tokens with ETH, so we need to calc how many tokens they get based upon the ETH amount that they are sending
+
+
+    // 1. We create a var called tokenAmount
+        // tokenAmount = Amount of Ethereum * Redemption rate
+        // Redemption rate = # of tokens they receive for 1 ether (in this case it is 100)
+    // 2. We create a state var called rate
+    uint tokenAmount = msg.value * rate;
+    token.transfer(msg.sender, tokenAmount);
+  }
+
+
+
 
 
 }
