@@ -23,7 +23,7 @@ contract EthSwap {
     token = _token;
   }
 
-  function buytokens() public payable {
+  function buyTokens() public payable {
     // Transfer tokens from EthSwap contract to the buyer by using transfer() function in Token contract
     // Transfer() takes two _to and _value
       // _to = msg.sender
